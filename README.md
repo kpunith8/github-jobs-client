@@ -18,7 +18,7 @@
 
 ## How to use
 
-- Clone the project
+- Clone the API, https://github.com/kpunith8/github-jobs-api and install the dependencies
 
 - First, run the cron job to get all the data from github's API.
 ```
@@ -31,6 +31,8 @@ $ node api/index.js
 ```
 
 - Once the server is up and running test whether API end point is working
+
+- Clone the client app and install the dependencies
 
 - Finally start the react app in development, goto `client` folder and run
 ```
