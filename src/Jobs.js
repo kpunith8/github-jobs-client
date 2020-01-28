@@ -58,7 +58,7 @@ export default function Jobs({ jobs }) {
 
   return (
     <div className="jobs">
-      <JobModal open={open} job={selectedJob} handleClose={handleClose} />
+      <JobModal className="job-modal" open={open} job={selectedJob} handleClose={handleClose} />
       <Typography className="page-title" variant="h4" component="h1">
         Entry Level Software Jobs
       </Typography>
@@ -85,6 +85,7 @@ export default function Jobs({ jobs }) {
         activeStep={activeStep}
         nextButton={
           <Button
+            className="button-next"
             size="small"
             onClick={handleNext}
             disabled={activeStep === numPages - 1}
@@ -94,7 +95,12 @@ export default function Jobs({ jobs }) {
           </Button>
         }
         backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+          <Button
+            className="button-prev"
+            size="small"
+            onClick={handleBack}
+            disabled={activeStep === 0}
+          >
             <KeyboardArrowLeft />
             Back
           </Button>

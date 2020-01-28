@@ -19,7 +19,6 @@ export default function JobModal({ job, open, handleClose }) {
   }
 
   return (
-    <div>
       <Dialog
         open={open}
         TransitionComponent={Transition}
@@ -29,32 +28,31 @@ export default function JobModal({ job, open, handleClose }) {
         aria-describedby="alert-dialog-slide-description"
       >
         <DialogTitle id="alert-dialog-slide-title">
-          {job.title} -{job.company}
+          {job.title} - {job.company}
           <img
-            className={"detail-logo"}
+            className="detail-logo"
             src={job.company_logo}
-            style={{ width: "60px", height: "60px" }}
+            style={{ marginLeft: "20px", width: "60px", height: "60px" }}
             alt="company_logo"
           />
         </DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-dialog-slide-description">
+          <DialogContentText id="job-source">
             <Chip size="small" label={`from ${job.source}`} />
           </DialogContentText>
           <DialogContentText
-            id="alert-dialog-slide-description"
+            id="job-description"
             dangerouslySetInnerHTML={{ __html: job.description }}
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button className="button-close" onClick={handleClose} color="primary">
             Close
           </Button>
-          <a href={job.url} target="_blank" rel="noopener noreferrer">
+          <a href={job.url} className="button-apply" target="_blank" rel="noopener noreferrer">
             <Button color="primary">Apply</Button>
           </a>
         </DialogActions>
       </Dialog>
-    </div>
   );
 }

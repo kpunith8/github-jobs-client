@@ -19,7 +19,6 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-
   "browserslist": {
     "production": [
       ">0.2%",
@@ -33,7 +32,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^3.8.1",
+    "cypress": "^3.8.3",
     "miragejs": "^0.1.33"
   }
 }
