@@ -16,7 +16,7 @@ function getMDY(ts) {
 
 // makeDate takes a TS and returns a date like Fri Jun 14
 // if it's today or yesterday, it returns that instead
-function makeDate(timestamp) {
+export function makeDate(timestamp) {
   const date = new Date(timestamp);
   const dateStr = getMDY(date);
   const todayStr = getMDY(new Date());
@@ -35,13 +35,13 @@ export default function Job({ job, onClick }) {
     <Paper onClick={onClick} className="job">
       <div className="flex-align-mid">
         <div className="job-title-location">
-          <Typography variant="h6">{job.title}</Typography>
-          <Typography variant="h5">{job.company}</Typography>
-          <Typography>{job.location}</Typography>
+          <Typography className="job-title" variant="h6">{job.title}</Typography>
+          <Typography className="job-company" variant="h5">{job.company}</Typography>
+          <Typography className="job-location">{job.location}</Typography>
         </div>
       </div>
       <div className="flex-align-mid">
-        <Typography>{makeDate(job.created_at)}</Typography>
+        <Typography className="job-posted-date">{makeDate(job.created_at)}</Typography>
       </div>
     </Paper>
   );

@@ -30,7 +30,12 @@ export default function JobModal({ job, open, handleClose }) {
       >
         <DialogTitle id="alert-dialog-slide-title">
           {job.title} -{job.company}
-          <img className={"detail-logo"} src={job.company_logo} alt="company_logo"/>
+          <img
+            className={"detail-logo"}
+            src={job.company_logo}
+            style={{ width: "60px", height: "60px" }}
+            alt="company_logo"
+          />
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">

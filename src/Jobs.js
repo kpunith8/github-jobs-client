@@ -59,10 +59,10 @@ export default function Jobs({ jobs }) {
   return (
     <div className="jobs">
       <JobModal open={open} job={selectedJob} handleClose={handleClose} />
-      <Typography variant="h4" component="h1">
+      <Typography className="page-title" variant="h4" component="h1">
         Entry Level Software Jobs
       </Typography>
-      <Typography variant="h6" component="h2">
+      <Typography className="jobs-count" variant="h6" component="h2">
         Found {numJobs} Jobs
       </Typography>
       {jobsOnPage.map((job, i) => (
@@ -70,13 +70,12 @@ export default function Jobs({ jobs }) {
           key={i}
           job={job}
           onClick={() => {
-            console.log("clicked");
             handleClickOpen();
             selectJob(job);
           }}
         />
       ))}
-      <div>
+      <div className="pagination-title">
         Page {activeStep + 1} of {numPages}
       </div>
       <MobileStepper
