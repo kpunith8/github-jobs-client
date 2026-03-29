@@ -32,7 +32,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^3.8.3",
+    "cypress": "^15.9.0",
     "miragejs": "^0.1.33"
   }
 }
